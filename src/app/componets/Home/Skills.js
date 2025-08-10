@@ -23,7 +23,7 @@ export default function Skills() {
             <div className="flex flex-wrap gap-x-4 gap-y-2 text-base">
               <span className="flex items-center gap-1"><FaJava className="text-xl text-blue-700" /> Java </span>
                <span className="flex items-center gap-1"><SiSpringboot className="text-xl text-gray-800" /> Spring Boot</span>
-                <span className="flex items-center gap-1"><SiSpringsecurity className="text-xl text-gray-800" /> Spring Boot Securyty</span>
+                <span className="flex items-center gap-1"><SiSpringsecurity className="text-xl text-gray-800" /> Spring Boot Security</span>
               <span className="flex items-center gap-1"><SiKotlin className="text-xl text-purple-600" /> Kotlin</span>
               <span className="flex items-center gap-1"><SiPhp className="text-xl text-blue-400" /> PHP</span>
               <span className="flex items-center gap-1"><FaNodeJs className="text-xl text-green-500" /> Node.js (Express.js)</span>
