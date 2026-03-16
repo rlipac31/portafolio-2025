@@ -1,24 +1,31 @@
 // components/Projects.jsx
+
+
+
 import React from 'react';
 import Image from 'next/image';
 
-const projects = [
+import { ProjectCardTopImage  } from './cards/card.js';
+
+
+const getProjects= async () => {
+ const  proyectos = [
     {
         id: 1,
         title: 'AppVotar',
         description: 'AppVotar es una plataforma independiente de encuestas electorales enfocada en Perú 2026. Garantiza la transparencia mediante votación anónima validada con DNI (sin almacenar datos personales). Surge como alternativa neutral y confiable frente a encuestadoras tradicionales, buscando convertirse en un referente ciudadano.',
         technologies: ['Next.js', 'React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB'],
         img: "https://res.cloudinary.com/rlipac/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1743039674/votos_degbfu.png",
-        link: 'https://app-votar-2025-orpin.vercel.app/', // Reemplaza con la URL de tu proyecto
+        link: 'https://app-votar-2025.vercel.app/', // Reemplaza con la URL de tu proyecto
     },
     {
         id: 2,
         title: 'VillaShop',
         description: 'Una pataforma web de compras oline.',
         technologies: ['React.js', 'Bootstrap'],
-        img: "https://res.cloudinary.com/rlipac/image/upload/v1754788265/villashop_d43ugx.png",
+        img: "https://res.cloudinary.com/rlipac/image/upload/v1768929795/Frontend_Home_jxgkle.png",
         //technologies: ['Kotlin', 'Android Studio', 'SQLite'],
-        link: 'https://villashop-react.vercel.app/categorias/Morrales', // Reemplaza con la URL de tu proyecto
+        link: 'https://fron-sentiment-api.vercel.app/', // Reemplaza con la URL de tu proyecto
     },
      {
         id: 3,
@@ -56,8 +63,17 @@ const projects = [
     }
 
 ];
+return proyectos;
 
-export default function Projects() {
+
+}
+
+
+
+
+export default async function Projects() {
+    const projectos = await getProjects();
+    console.log("proyecttos..::", projectos)
     return (
         <section className="bg-white py-20 lg:py-32" id="proyectos">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -66,46 +82,12 @@ export default function Projects() {
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {projects.map((project) => (
-                        <a
-                            key={project.id}
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group block bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6"
-                        >
-                            <h3 className="text-2xl font-bold text-blue-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-                                {project.title}
-                            </h3>
-                          
+                    { 
+                      projectos.length == 0 ? <h3>NO hy proyectos</h3>:  projectos.map( project => (
+                            <ProjectCardTopImage  key={project.id} project={project}/>
+                        ))
+                    }
 
-                            <p className="text-gray-600 mb-4">{project.description}</p>
-
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {project.technologies.map((tech, index) => (
-                                    <span
-                                        key={index}
-                                        className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-
-                            <span className="inline-flex items-center text-blue-600 font-medium group-hover:underline">
-                                Ver proyecto
-                                <svg
-                                    className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.5 12h-15M13 7l5 5-5 5" />
-                                </svg>
-                            </span>
-                        </a>
-                    ))}
                 </div>
             </div>
         </section>

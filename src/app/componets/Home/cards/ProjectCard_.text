@@ -1,0 +1,58 @@
+
+import React from "react";
+import Image from "next/image";
+
+export  const ProjectCard = ({project} ) => {
+  const { title, description, technologies, img,  link } = project;
+    console.log('pryecto:: acrd::', title, technologies);
+    return (
+      <div className="group relative h-96 w-full overflow-hidden rounded-xl bg-gray-900 shadow-lg">
+        {/* Imagen de fondo */}
+        <Image
+          src={img} 
+          alt={title} 
+          width={100}
+          height={80}
+          className="absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-100"
+        />
+  
+        {/* Overlay Oscuro que se aclara al hacer hover */}
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/70 to-transparent transition-opacity duration-500 group-hover:bg-black/20" />
+  
+        {/* Contenido sobre la imagen */}
+        <div className="absolute inset-0 flex flex-col justify-end p-6 text-white transition-transform duration-500">
+          
+          {/* Título y Descripción */}
+          <h3 className="text-2xl font-bold mb-2">{title}</h3>
+          <p className="text-sm text-gray-200 line-clamp-3 mb-4 transition-opacity group-hover:opacity-90">
+            {description}
+          </p>
+  
+          {/* Tecnologías */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {technologies.map((tag, index) => (
+              <span key={index} className="px-2 py-1 text-xs font-medium bg-blue-600/80 backdrop-blur-sm rounded-md">
+                {tag}
+              </span>
+            ))} 
+          </div>
+  
+          {/* Botones */}
+          <div className="flex gap-4">
+            <a 
+              href={link} 
+              className="flex-1 text-center py-2 bg-white text-black font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-colors"
+            >
+              Ver Demo
+            </a>
+          {/*   <a 
+              href={repoLink} 
+              className="flex-1 text-center py-2 bg-gray-800 border border-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors"
+            >
+              GitHub
+            </a> */}
+          </div>
+        </div>
+      </div>
+    );
+  };
