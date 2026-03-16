@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Globe, Github, Layers } from 'lucide-react'; // Opcional: usa iconos para más nivel
 
 export const ProjectCard = ({ project }) => {
-  const { title, description, img, technologies, link } = project;
+  const { title, description, img, technologies, link, git } = project;
 
   return (
     <div className="group relative flex flex-col h-full rounded-2xl border border-slate-200 bg-white p-2 transition-all duration-300 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10">
@@ -56,7 +56,7 @@ export const ProjectCard = ({ project }) => {
             Ver Proyecto
           </a>
           <a
-            href="#"
+            href={git}
             target="_blank"
             className="flex items-center justify-center rounded-lg border border-slate-200 p-2.5 text-slate-600 transition-all hover:bg-slate-50 hover:text-blue-600"
             aria-label="GitHub Repository"
