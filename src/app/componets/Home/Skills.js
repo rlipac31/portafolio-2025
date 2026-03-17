@@ -77,7 +77,7 @@ export default function Skills() {
             <h3 className="font-bold text-gray-900 mb-4">🛠️ Herramientas</h3>
             <div className="flex flex-wrap gap-x-4 gap-y-2 text-base">
               <span className="flex items-center gap-1"><SiIntellijidea className="text-xl text-purple-700" /> IntelliJ</span>
-          {/*     <span className="flex items-center gap-1"><SiVisualstudiocode className="text-xl text-blue-500" /> VSCode</span> */}
+   
           <span className="flex items-center gap-1"> <VscVscode className="text-xl text-blue-500" /> VSCode</span>
 
          
