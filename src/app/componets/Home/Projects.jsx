@@ -63,16 +63,6 @@ const getProjects= async () => {
         link: 'https://gold-reservas.netlify.app/login', // Reemplaza con la URL de tu proyecto
         git:"https://github.com/rlipac31/fron-reseras"
     }
-    // {
-    //     id: 6,
-    //     title: 'Conversor de Modenas',
-    //     description: 'Este proyecto es un simple conversor de monedas desarrollado en Java 17. Utiliza una API externa para obtener las tasas de cambio y la librería Gson para parsear la respuesta JSON a objetos Java..',
-    //     technologies: ['Java 17', 'Spring Boot ', 'Gson', 'Api: https://www.exchangerate-api.com/'],
-    //     img: "https://res.cloudinary.com/rlipac/image/upload/v1753304441/pantalla_login_na8x1p.png",
-    //     link: 'https://github.com/rlipac31/conversor-monedas-javaWeb', // Reemplaza con la URL de tu proyecto
-    //     git:""
-    // }
-
 ];
 return proyectos;
 
